@@ -33,7 +33,7 @@ public class PostService {
           format("Post with title '%s' is already present", command.getTitle())
       );
     }
-    Post post = postRepository.save(Post.newPost(command.getTitle(), command.getContent()));
+    Post post = postRepository.saveAndFlush(Post.newPost(command.getTitle(), command.getContent()));
     return new PostResponse(post.getId(), post.getTitle(), post.getContent());
   }
 }
