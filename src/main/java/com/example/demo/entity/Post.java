@@ -6,6 +6,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,8 +32,10 @@ public class Post {
   @GeneratedValue(strategy = IDENTITY)
   private Long id;
 
+  @Column(name = "title")
   private String title;
 
+  @Column(name = "content")
   private String content;
 
   @OneToMany(mappedBy = "post", cascade = {PERSIST, MERGE})

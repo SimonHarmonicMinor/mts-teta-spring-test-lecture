@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,6 +23,7 @@ public class Comment {
   @JoinColumn(name = "post_id")
   private Post post;
 
+  @Column(name = "content")
   private String content;
 
   public Long getId() {
