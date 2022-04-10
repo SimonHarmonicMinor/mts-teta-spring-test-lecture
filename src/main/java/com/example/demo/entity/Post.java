@@ -38,11 +38,12 @@ public class Post {
   @Column(name = "content")
   private String content;
 
-  @OneToMany(mappedBy = "post", cascade = {PERSIST, MERGE})
-  private List<Comment> comments = new ArrayList<>();
-
   public Long getId() {
     return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   public String getTitle() {
@@ -59,13 +60,5 @@ public class Post {
 
   public void setContent(String content) {
     this.content = content;
-  }
-
-  public List<Comment> getComments() {
-    return comments;
-  }
-
-  public void setComments(List<Comment> comments) {
-    this.comments = comments;
   }
 }
